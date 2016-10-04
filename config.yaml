@@ -1,0 +1,13 @@
+service:
+  listenaddr: 0.0.0.0
+  listenport: 7000
+  cert: my-server.crt
+  key: my-server.key
+influxdb:
+    scheme: http
+    host: influxdb.mydomain
+    port: 8086
+    protocol: http
+    database: weather
+    username: weather
+    password: someSecretPassword
