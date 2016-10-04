@@ -10,7 +10,7 @@ func liveWX(w http.ResponseWriter, req *http.Request, c Config) {
 }
 
 func lastHourRain(w http.ResponseWriter, req *http.Request, c Config) {
-	b := dbQuery(w, req, c, "SELECT difference(last(YearRain)) FROM wx_reading WHERE time > now() - 60m GROUP BY time(60m) ORDER BY time DESC LIMIT 1")
+	b := dbQuery(w, req, c, " SELECT LAST(YearRain) - FIRST(YearRain) FROM wx_reading WHERE time > now() - 1d")
 	w.Header().Add("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/javascript")
 	w.Write(b)
