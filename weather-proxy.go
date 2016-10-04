@@ -21,7 +21,7 @@ func main() {
 	}
 
 	http.HandleFunc("/live", func(w http.ResponseWriter, req *http.Request) { liveWX(w, req, cfg) })
-	http.HandleFunc("/last-hour-rain", func(w http.ResponseWriter, req *http.Request) { lastHourRain(w, req, cfg) })
+	http.HandleFunc("/last-day-rain", func(w http.ResponseWriter, req *http.Request) { lastDayRain(w, req, cfg) })
 	http.HandleFunc("/day", func(w http.ResponseWriter, req *http.Request) { dayWX(w, req, cfg) })
 	http.HandleFunc("/twodays", func(w http.ResponseWriter, req *http.Request) { twoDaysWX(w, req, cfg) })
 	http.HandleFunc("/week", func(w http.ResponseWriter, req *http.Request) { weekWX(w, req, cfg) })
