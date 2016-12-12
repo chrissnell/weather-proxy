@@ -28,7 +28,7 @@ func dbQuery(w http.ResponseWriter, req *http.Request, c Config, query string) [
 
 	u.RawQuery = q.Encode()
 
-	fmt.Println("url:", u.String())
+	// fmt.Println("url:", u.String())
 
 	resp, err := http.Get(u.String())
 	defer resp.Body.Close()
