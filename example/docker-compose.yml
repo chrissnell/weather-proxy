@@ -2,6 +2,8 @@ version: '2'
 services:
   weather-proxy:
     network_mode: "host"
+    expose:
+    - "7000"
     image: chrissnell/weather-proxy
     environment:
     - WEATHER_PROXY_CONFIG=/config/config.yaml
