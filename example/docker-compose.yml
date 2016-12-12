@@ -1,0 +1,9 @@
+version: '2'
+services:
+  weather-proxy:
+    network_mode: "host"
+    image: chrissnell/weather-proxy
+    environment:
+    - WEATHER_PROXY_CONFIG=/config/config.yaml
+    volumes:
+     - /etc/weather-proxy:/config
